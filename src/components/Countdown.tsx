@@ -41,7 +41,7 @@ export function Countdown() {
   //   const [time, setTime] = useState(new Date());
   const [dateTracker, setDateTracker] = useState<DateTracker>({
     days: 13,
-    hours: 24,
+    hours: 23,
     minutes: 60,
     seconds: 60,
   });
@@ -111,46 +111,6 @@ export function Countdown() {
 
       return newDateTracker;
     });
-
-    // const newDateTracker: DateTracker = {
-    //   seconds: seconds - 1,
-    //   minutes: minutes,
-    //   hours: hours,
-    //   days: days,
-    // };
-
-    // if (newSeconds <= 0) {
-    //   newSeconds = 60;
-    //   newMinutes--;
-    // }
-
-    // if (newMinutes <= 0) {
-    //   newMinutes = 60;
-    //   newHours--;
-    // }
-
-    // if (newHours <= 0) {
-    //   newHours = 24;
-    //   newDays--;
-    // }
-
-    // // on hour change, update hours and shuffle state
-    // if (hours !== newHours) {
-    //   setHours(() => newHours);
-    //   setHoursShuffle((prev) => !prev);
-    // }
-
-    // // on minute change, update minutes and shuffle state
-    // if (minutes !== newMinutes) {
-    //   setMinutes(() => newMinutes);
-    //   setMinutesShuffle((prev) => !prev);
-    // }
-
-    // // on second change, update seconds and shuffle state
-    // if (seconds !== newSeconds) {
-    //   setSeconds((prevSec) => prevSec - 1);
-    //   setSecondsShuffle((prev) => !prev);
-    // }
   }
 
   return (
@@ -180,16 +140,5 @@ export function Countdown() {
         unit="seconds"
       />
     </section>
-
-    // <CardsWrapper
-    // //   days={days}
-    // //   daysShuffle={daysShuffle}
-    // //   hours={hours}
-    // //   hoursShuffle={hoursShuffle}
-    // //   minutes={minutes}
-    // //   minutesShuffle={minutesShuffle}
-    // //   seconds={seconds}
-    // //   secondsShuffle={secondsShuffle}
-    // />
   );
 }
