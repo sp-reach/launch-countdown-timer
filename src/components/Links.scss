@@ -1,0 +1,16 @@
+.Links {
+  display: flex;
+  height: 100%;
+  width: 25%;
+  justify-content: space-evenly;
+}
+
+.IconLink {
+  height: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  .Links {
+    width: 50%;
+  }
+}

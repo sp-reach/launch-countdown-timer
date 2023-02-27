@@ -1,32 +1,33 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import './app.css'
+// import { useState } from "preact/hooks";
+import { JSXInternal } from "preact/src/jsx";
+import "./app.css";
+import { Countdown } from "./components/Countdown";
+import { Links } from "./components/Links";
 
-export function App() {
-  const [count, setCount] = useState(0)
-
+function AppWrapper({ children }: { children: JSXInternal.Element }) {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
+      <div className="AppImageWrapper">
+        <div className="AppBodyImage"></div>
+        <div className="AppFooterImage"></div>
       </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
+      {children}
     </>
-  )
+  );
+}
+
+export function App() {
+  return (
+    <AppWrapper>
+      <div className="AppWrapper">
+        <div className="AppBody">
+          <h3 className="AppHeading">WE'RE LAUNCHING SOON</h3>
+          <Countdown />
+        </div>
+        <div className="AppFooter">
+          <Links />
+        </div>
+      </div>
+    </AppWrapper>
+  );
 }
